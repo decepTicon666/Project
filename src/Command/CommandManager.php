@@ -5,6 +5,10 @@ namespace App\Command;
 use App\Command\Commands\AddAuthComponentCommand;
 use App\Command\Commands\AddRegisterComponentCommand;
 use App\Command\Commands\CreateControllerCommand;
+use App\Command\Commands\CreateLoginControllerCommand;
+use App\Command\Commands\CreateAdminControllerCommand;
+use App\Command\Commands\CreateRegisterControllerCommand;
+use App\Command\Commands\CreateResetControllerCommand;
 use App\Command\Exception\UnknownCommandException;
 
 class CommandManager
@@ -19,9 +23,13 @@ class CommandManager
     private function registerCommands()
     {
         $this->commands = [
-            CreateControllerCommand::getCommand()     => new CreateControllerCommand(),
-            AddRegisterComponentCommand::getCommand() => new AddRegisterComponentCommand(),
-            AddAuthComponentCommand::getCommand()     => new AddAuthComponentCommand()
+            CreateControllerCommand::getCommand()         => new CreateControllerCommand(),
+            AddRegisterComponentCommand::getCommand()     => new AddRegisterComponentCommand(),
+            AddAuthComponentCommand::getCommand()         => new AddAuthComponentCommand(),
+            CreateLoginControllerCommand::getCommand()    => new CreateLoginControllerCommand(),
+            CreateAdminControllerCommand::getCommand()    => new CreateAdminControllerCommand(),
+            CreateRegisterControllerCommand::getCommand() => new CreateRegisterControllerCommand(),
+            CreateResetControllerCommand::getCommand()    => new CreateResetControllerCommand()
         ];
     }
 
@@ -33,6 +41,8 @@ class CommandManager
         foreach ($this->commands as $commandName => $command) {
             $commandsAvailable[$commandName] = $command->getDescription();
         }
+
+        ksort($commandsAvailable);
 
         return $commandsAvailable;
     }
