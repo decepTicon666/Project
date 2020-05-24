@@ -8,12 +8,24 @@ use App\Command\Exception\UnknownFileTemplateException;
 class CreateControllerCommand extends AbstractCommand
 {
     private const COMMAND            = 'make:controller';
+    private const DESCRIPTION        = 'Add a controller to your application.';
+    private const NOTICE             = 'After running this command add your route into "public/index.php".';
     private const CLASS_NAME_REPLACE = '##ControllerName##';
     private const DIR_CONTROLLERS    = __DIR__ . '/../../Controller';
 
     public static function getCommand(): string
     {
         return self::COMMAND;
+    }
+
+    public function getDescription(): string
+    {
+        return self::DESCRIPTION;
+    }
+
+    public function getNotice(): ?string
+    {
+        return self::NOTICE;
     }
 
     /**

@@ -4,21 +4,18 @@ namespace App\Command\Commands;
 
 use App\Command\AbstractCommand;
 
-class AddRegisterComponentCommand extends AbstractCommand
+class AddAuthComponentCommand extends AbstractCommand
 {
-    private const COMMAND           = 'add:component:register';
-    private const DESCRIPTION       = 'Add the register service to your application.';
+    private const COMMAND           = 'add:component:auth';
+    private const DESCRIPTION       = 'Add the authentication service to your application.';
     private const DIR_BASE          = __DIR__ . '/../..';
-    private const DIR_COMPONENT_TPL = 'Components/Register';
+    private const DIR_COMPONENT_TPL = 'Components/Auth';
     private const DIRECTORIES = [
-        'Register',
-        'Register/Exception'
+        'Auth'
     ];
     private const FILES       = [
-        'Register/Exception/PasswordsNotEqualException.php',
-        'Register/Exception/RegisterFormErrorException.php',
-        'Register/Exception/UserExistsException.php',
-        'Register/RegisterService.php'
+        'Auth/LoginService.php',
+        'Auth/PasswordResetService.php'
     ];
 
     public static function getCommand(): string

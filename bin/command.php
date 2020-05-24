@@ -3,7 +3,6 @@
 require __DIR__ . "/../autoload.php";
 
 use \App\Command\CommandManager;
-use \App\Command\Exception\NoCommandArgument;
 
 $commandManager = new CommandManager();
 
@@ -12,10 +11,24 @@ try {
     $commandArgument = isset($argv[2]) ? $argv[2] : null;
 
     if (!$commandName) {
-        throw new NoCommandArgument('no command argument given');
+        $commandsAvailable = $commandManager->getCommandsAvailable();
+
+        echo "\nAvailable commands";
+        echo "\n==================\n\n";
+
+        foreach ($commandsAvailable as $commandName => $description) {
+            echo $commandName . ' (' . $description . ")\n";
+        }
+
+        echo "\n\n";
     }
 
-    $commandManager->runCommand($commandName, $commandArgument);
+    $notice = $commandManager->runCommand($commandName, $commandArgument);
+
+    if ($notice) {
+        echo "\n" . $notice . "\n";
+    }
+
 } catch (Exception $exception) {
     echo "\n" . $exception->getMessage() . "\n";
 }
