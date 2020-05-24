@@ -6,7 +6,7 @@ services:
     ports:
       - 3307:3306
     volumes:
-      - .docker/database:/var/lib/mysql
+      - /Volumes/database:/var/lib/mysql
     environment:
       MYSQL_DATABASE: 'myproject'
       MYSQL_ROOT_PASSWORD: '12345muh'
