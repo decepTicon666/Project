@@ -1,6 +1,6 @@
 <?php
 
-namespace App\User;
+namespace App\Auth;
 
 use App\Mailer\Exception\MissingMailDataException;
 use App\Mailer\Mailer;

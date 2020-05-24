@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Mailer\Exception\MissingMailDataException;
 use App\Repository\UsersRepository;
-use App\User\PasswordResetService;
+use App\Auth\PasswordResetService;
 
 class ResetController extends AbstractController
 {

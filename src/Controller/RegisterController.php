@@ -70,15 +70,4 @@ class RegisterController extends AbstractController
             throw new PasswordsNotEqualException('Die Passwörter müssen übereinstimmen.');
         }
     }
-
-    public function attemptRegister($password, $passwordRepeat)
-    {
-        if ($password == $passwordRepeat) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
-
-?>

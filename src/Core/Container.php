@@ -14,10 +14,10 @@ use App\Controller\RegisterController;
 use App\Controller\LoginController;
 use App\Controller\ResetController;
 use App\Auth\LoginService;
-use App\Repository\PasswordResetRepository;
-use App\Repository\UsersRepository;
-use App\User\PasswordResetService;
 use App\Register\RegisterService;
+use App\Repository\PasswordResetRepository;
+use App\Auth\PasswordResetService;
+use App\Repository\UsersRepository;
 use PDO;
 use PDOException;
 

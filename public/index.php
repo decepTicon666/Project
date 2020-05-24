@@ -34,10 +34,6 @@ $routes = [
         'controller' => 'registerController',
         'method' => 'show'
     ],
-    '/insertRegister' => [
-        'controller' => 'registerController',
-        'method' => 'register'
-    ],
     '/passwordReset' => [
         'controller' => 'resetController',
         'method' => 'showReset'
