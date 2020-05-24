@@ -1,0 +1,111 @@
+1.1         Planung
+1.1.1         Lastenheft Erstellung
+1.1.2         Pflichtenheft Erstellung
+1.1.3         Software implementieren
+1.1.4         Dokumentation erstellen
+1.1.5         Abnahme durchführen
+
+2.          Lastenheft erstellen
+2.1           Ausgangssituation
+2.2           Zielsetzung
+2.3           Produkteinsatz
+2.4           Funktionale Anforderungen
+2.5           Nichtfunktionale Anforderungen
+2.6           Lieferumfang
+
+3.          Pflichtenheft erstellen
+3.1           Grafische Oberflächen erstellen mit Hilfe von HTML/CSS
+3.1.1           Login/Start Oberfläche erstellen
+3.1.1.1           Username und Passwort Inputfelder erstellen
+3.1.1.2           Login, Passwort vergessen und Registrier Buttons erstellen
+3.1.2         Registrier Oberfläche erstellen
+3.1.2.1         13 Inputfelder erstellen
+3.1.2.2         Registrier Button erstellen
+3.1.3         Dashboard Oberfläche erstellen
+3.1.3.1         Namen des Users ausgeben
+3.1.3.2         Logout Button erstellen
+3.1.4         Passwort Reset Oberfläche 1/2 erstellen
+3.1.4.1         Email Inputfeld erstellen
+3.1.4.2         senden Button erstellen
+3.1.5         Passwort Reset Oberfläche 2/2 erstellen
+3.1.5.1         Passwort und Passwort wiederholen Inputfelder erstellen
+3.1.5.2         Passwort ändern Button erstellen
+3.2           Steuerung zwischen den 4 Seiten implementieren
+3.3           Datenbank entwerfen
+3.4           Funktionalität pro Event einbauen
+
+
+3.4.1       Login/Erste Seite
+
+3.4.1.1       Authentifizierung
+3.4.1.1.1       Abgleich der Daten mit der Datenbank
+3.4.1.1.2       Bei Bedarf Ausgabe einer Fehlermeldung
+3.4.1.1.3       Nach erfolgreicher Authentifizierung soll der User eingeloggt sein
+3.4.1.1.3.1       $_SESSION Variablen mit Usernamen
+3.4.1.1.3.2       Nach erfolgreichem login soll die Funktion session_regenerate_id() ausgeführt werden
+3.4.1.1.4       Weiterleitung auf Dashboard
+
+
+3.4.2       Registrierung Seite
+
+3.4.2.1       Registrierung
+3.4.2.1.1       Validierung der eingegeben Daten
+3.4.2.1.2       Bei Bedarf Ausgabe einer Fehlermeldung
+3.4.2.1.3       Abgleich der Passwörter, wenn ungleich=> 3.4.1.1.2
+3.4.2.1.4       Existenz des Users prüfen, wenn nicht vorhanden=> 3.4.1.1.2
+3.4.2.1.5       Hashen des Passworts
+3.4.2.1.6       Speichern der Daten in der Datenbank, einschließlich des Datums der Registrierung
+3.4.2.1.7       Nach erfolgreicher Registrierung soll der User eingeloggt sein
+3.4.2.1.7.1       $_SESSION Variablen mit Usernamen
+3.4.2.1.7.2       Nach erfolgreichem login soll die Funktion session_regenerate_id() ausgeführt werden
+3.4.2.1.8       Weiterleitung auf Dashboard
+
+
+3.4.3       Dashboard Seite
+
+3.4.3.1       Logout
+3.4.3.1.1       session schließen
+3.4.3.1.2       session_regenerate_id() ausführen
+3.4.3.1.3       Login View aufrufen
+
+
+3.4.4       Passwort Reset Seite
+
+3.4.4.1       Link an E-mail Adresse senden
+3.4.4.1.1       Validierung der eingegeben Daten
+3.4.4.1.2       Bei Bedarf Ausgabe einer Fehlermeldung
+3.4.4.1.3       Abgleich der E-mail Adresse, wenn nicht existent=> 3.4.4.1.2
+3.4.4.1.4       Senden einer E-mail
+
+
+3.4.5       Passwort Change Seite
+
+3.4.5.1       Ändern des Passworts
+3.4.5.2       Abgleich der Passwörter
+3.4.5.3       Bei Bedarf Ausgabe einer Fehlermeldung
+3.4.5.4       Hashen des Passworts
+3.4.5.5       Speichern des Passworts in der Datenbank
+
+
+3.5         Implementierungsbefehl Modul Login
+3.5.1         Erstellen der Tabellen
+3.5.2         Erstellen der Ordnerstruktur User
+3.5.2.1         Implementieren der Datei LoginController.php
+3.5.2.2         Implementieren der Datei LoginService.php
+3.5.2.3         Implementieren der Datei UsersRepository.php
+3.5.2.4         Implementieren der Datei UsersModel.php
+3.5.2.5         Implementieren der Datei RegisterController.php
+3.5.3         Erstellen der Ordnerstruktur user im /View
+3.5.3.1         Implementieren der Datei login.php
+3.5.3.2         Implementieren der Datei register.php
+3.5.3.3         Implementieren der Datei passwordReset.php
+3.5.3.4         Implementieren der Datei passwordChange.php
+3.5.4         Implementierung der Parameter für die Instanzenerstellung in das Basisframework
+3.5.5         Implementierung der Parameter für das Routing in das Basisframework
+3.5.6         Implementierung von session_start() in die index.php
+3.5.7         Implementierung eines Login Buttons auf der Startseite
+
+3.5         Deployment
+3.5.1       Je Stockwerk 1 Server
+3.5.2       User schulen
+3.5.3       Testdurchführung
