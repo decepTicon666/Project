@@ -11,11 +11,35 @@ class AddAuthComponentCommand extends AbstractCommand
     private const DIR_BASE          = __DIR__ . '/../..';
     private const DIR_COMPONENT_TPL = 'Components/Auth';
     private const DIRECTORIES = [
-        'Auth'
+        'Auth',
+        'Controller',
+        'Models',
+        'Register',
+        'Register/Exception',
+        'Repository',
+        '../Views/admin',
+        '../Views/user',
     ];
     private const FILES       = [
         'Auth/LoginService.php',
-        'Auth/PasswordResetService.php'
+        'Auth/PasswordResetService.php',
+        'Controller/AdminController.php',
+        'Controller/LoginController.php',
+        'Controller/RegisterController.php',
+        'Controller/ResetController.php',
+        'Models/UsersModel.php',
+        'Register/Exception/PasswordsNotEqualException.php',
+        'Register/Exception/RegisterFormErrorException.php',
+        'Register/Exception/UserExistsException.php',
+        'Register/RegisterService.php',
+        'Repository/UsersRepository.php',
+        'Repository/PasswordResetRepository.php',
+        '../Views/admin/admin.php',
+        '../Views/user/dashboard.php',
+        '../Views/user/login.php',
+        '../Views/user/passwordChange.php',
+        '../Views/user/passwordReset.php',
+        '../Views/user/register.php'
     ];
 
     public static function getCommand(): string
